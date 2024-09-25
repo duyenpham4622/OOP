@@ -1,13 +1,14 @@
 package tuan4_bai2_Sach;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class KiemThuSach {
-	static void nhapCung() {
-        LocalDate ngayNhap = LocalDate.of(2021, 9, 10);  // Using LocalDate instead of Date
-        Sach sach1 = new SachGiaoKhoa("A123", ngayNhap, 10000, 5, "NXB1", "moi");
-        Sach sach2 = new SachThamKhao("B123", ngayNhap, 20000, 3, "NXB2", 0.1);
-        
+	// Function to provide some hardcoded input (for testing purposes)
+    static void nhapCung() {
+        LocalDate ngayNhap = LocalDate.of(2021, 9, 10); 
+        SachGiaoKhoa sach1 = new SachGiaoKhoa("A123", ngayNhap, 10000, 5, "NXB1", "moi");
+        SachThamKhao sach2 = new SachThamKhao("B123", ngayNhap, 20000, 3, "NXB2", 0.1);
         System.out.printf(sach1.toString());
         System.out.printf(sach2.toString());
     }
@@ -21,11 +22,13 @@ public class KiemThuSach {
         System.out.println("4. Tính trung bình cộng đơn giá sách tham khảo");
         System.out.println("5. Xuất các sách giáo khoa của nhà xuất bản X");
         System.out.println("6. Nhập cùng");
+        System.out.println("7. Sắp xếp sách theo mã sách");
+        System.out.println("8. Sắp xếp sách theo đơn giá");
+        System.out.println("9. Sắp xếp sách theo số lượng");
         System.out.println("0. Thoát");
         System.out.print("Chọn chức năng: ");
     }
 
-    // Main function to interact with the user
     static void nhapSach() {
         Scanner scanner = new Scanner(System.in);
         QuanLySach thuVien = new QuanLySach();
@@ -41,14 +44,13 @@ public class KiemThuSach {
                         thuVien.nhapDanhSachSach(scanner);
                         break;
                     case 2:
-                        nhapCung();
                         thuVien.xuatDanhSachSach();
                         break;
                     case 3:
                         System.out.println("Tổng thành tiền sách giáo khoa: " + thuVien.tongThanhTienSachGiaoKhoa());
                         break;
                     case 4:
-                        System.out.println("Trung bình cộng đơn giá sách tham khảo: " + thuVien.trungBinhCongDonGiaSachThamKhao());
+                        System.out.println("Trung bình cộng đơn giá sách tham khảo: " + thuVien.trungBinhDonGiaSachThamKhao());
                         break;
                     case 5:
                         System.out.print("Nhập nhà xuất bản cần tìm sách giáo khoa: ");
@@ -58,6 +60,15 @@ public class KiemThuSach {
                     case 6:
                         nhapCung();
                         break;
+                    case 7:
+                        thuVien.sapXepTheoMaSach();
+                        break;
+                    case 8:
+                        thuVien.sapXepTheoDonGia();
+                        break;
+                    case 9:
+                    	thuVien.sapXepTheoSoLuong();
+                    	break;
                     case 0:
                         running = false;
                         System.out.println("Kết thúc chương trình.");
@@ -66,10 +77,10 @@ public class KiemThuSach {
                         System.out.println("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                         break;
                 }
+
             } catch (Exception e) {
                 System.out.println("Lỗi: " + e.getMessage());
             }
-            System.out.println("--------------------");
         }
         scanner.close();
     }
@@ -78,5 +89,6 @@ public class KiemThuSach {
     public static void main(String[] args) {
         nhapSach();
     }
+	
 
 }
