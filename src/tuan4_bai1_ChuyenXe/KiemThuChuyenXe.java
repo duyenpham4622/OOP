@@ -246,7 +246,7 @@ public class KiemThuChuyenXe {
 
 	static void getDSXeNgoaiThanh() {
 		System.out.println("Danh sách xe ngoại thành: ");
-		for (NgoaiThanh xeNgoai : DS.getDSXeNgoaiThanh())
+		for (ChuyenXe xeNgoai : DS.getDSXeNgoaiThanhDung())
 			System.out.println(xeNgoai);
 	}
 

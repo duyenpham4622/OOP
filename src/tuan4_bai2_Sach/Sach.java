@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+import java.util.Objects;
 import java.util.Scanner;
 
 public abstract class Sach implements Comparable<Sach> {
@@ -107,8 +107,26 @@ public abstract class Sach implements Comparable<Sach> {
     public void setNgayNhap(LocalDate ngayNhap) {
         this.ngayNhap = ngayNhap;
     }
+    
 
     @Override
+	public int hashCode() {
+		return Objects.hash(maSach);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Sach other = (Sach) obj;
+		return Objects.equals(maSach, other.maSach);
+	}
+
+	@Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DecimalFormat df = new DecimalFormat("#,##0.00VND");
@@ -116,5 +134,6 @@ public abstract class Sach implements Comparable<Sach> {
         return String.format("|%-10s|%-15s|%-15s|%-10d|%-20s|", maSach, ngayNhap.format(formatter), formattedDonGia,
                 soLuong, nhaXuatBan);
     }
+    
 }
 
