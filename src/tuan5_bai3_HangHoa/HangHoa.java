@@ -61,6 +61,10 @@ public abstract class HangHoa {
 		HangHoa other = (HangHoa) obj;
 		return Objects.equals(maHang, other.maHang);
 	}
-    
+	@Override
+	public String toString() {
+        return String.format("Mã hàng: %s\nTên hàng: %s\nSố lượng tồn: %d\nĐơn giá: %.2f VNĐ",
+                             maHang, tenHang, soLuongTon, donGia);
+    }
     
 }

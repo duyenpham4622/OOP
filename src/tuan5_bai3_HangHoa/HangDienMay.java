@@ -33,4 +33,9 @@ public class HangDienMay extends HangHoa {
 	public double getCongSuat() {
 		return congSuat;
 	}
+	@Override
+    public String toString() {
+        return super.toString() + String.format("\nThời gian bảo hành: %d tháng\nCông suất: %.2f KW",
+                                                  thoiGianBaoHanh, congSuat);
+    }
 }

@@ -31,6 +31,10 @@ public class HangSanhSu extends HangHoa {
 	public LocalDate getNgayNhapKho() {
 		return ngayNhapKho;
 	}
-    
+	@Override
+    public String toString() {
+        return super.toString() + String.format("\nNhà sản xuất: %s\nNgày nhập kho: %s",
+                                                  nhaSanXuat, ngayNhapKho);
+    }
 
 }

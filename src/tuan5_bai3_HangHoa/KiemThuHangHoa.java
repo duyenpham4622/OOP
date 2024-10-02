@@ -11,8 +11,10 @@ public class KiemThuHangHoa {
         while (true) {
             System.out.println("Menu:");
             System.out.println("1. Thêm hàng hóa");
-            System.out.println("2. In danh sách hàng hóa");
-            System.out.println("3. Thoát");
+            System.out.println("2. Sửa hàng hóa");
+            System.out.println("3. Xóa hàng hóa");
+            System.out.println("4. In danh sách hàng hóa");
+            System.out.println("5. Thoát");
             System.out.print("Chọn chức năng: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Đọc newline

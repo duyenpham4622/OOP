@@ -61,6 +61,10 @@ public class HangThucPham extends HangHoa {
 		public void setNhaCungCap(String nhaCungCap) {
 			this.nhaCungCap = nhaCungCap;
 		}
-		
+		@Override
+	    public String toString() {
+	        return super.toString() + String.format("\nNgày sản xuất: %s\nNgày hết hạn: %s\nNhà cung cấp: %s",
+	                                                  ngaySanXuat, ngayHetHan, nhaCungCap);
+	    }
 
 }

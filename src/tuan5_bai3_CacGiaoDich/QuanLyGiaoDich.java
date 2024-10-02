@@ -3,8 +3,8 @@ package tuan5_bai3_CacGiaoDich;
 import java.util.ArrayList;
 
 public class QuanLyGiaoDich {
+	
 	private ArrayList<GiaoDich> danhSachGiaoDich;
-
     public QuanLyGiaoDich() {
         danhSachGiaoDich = new ArrayList<>();
     }

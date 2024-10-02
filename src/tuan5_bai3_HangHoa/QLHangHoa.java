@@ -20,6 +20,28 @@ public class QLHangHoa {
     	}
         
     }
+    public boolean xoaHangHoa(String maHang) {
+        HangHoa hangHoa = timHangHoa(maHang);
+        if (hangHoa != null) {
+            danhSach.remove(hangHoa);
+            return true; // Xóa thành công
+        }
+        return false; // Không tìm thấy hàng hóa
+    }
+    private HangHoa timHangHoa(String maHang) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean suaHangHoa(String maHang, HangHoa hangHoaMoi) {
+        HangHoa hangHoaCu = timHangHoa(maHang);
+        if (hangHoaCu != null) {
+            int index = danhSach.indexOf(hangHoaCu);
+            danhSach.set(index, hangHoaMoi);
+            return true; // Sửa thành công
+        }
+        return false; // Không tìm thấy hàng hóa
+    }
 
     public void inDanhSach() {
         System.out.printf("%-15s %-20s %-15s %-15s %-15s%n", 
